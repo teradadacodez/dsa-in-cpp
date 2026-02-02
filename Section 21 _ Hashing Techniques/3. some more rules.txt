@@ -1,0 +1,14 @@
+its the responsibility of a programmer to select a hash function such that
+the hash table has values equally distributed and not clustered in some place !!
+1. Double hashing :
+       we select three or more functions such that if first one makes a collision then evaluate 
+       through second or it both make collisions try their linear combination like
+       h1(x) , h2(x) , h(x) = h1(x) + i*h2(x) , i=0,1,2,3....
+       or we can use explicit function like h(h1(h2(x))) !! 
+
+2. Standard hash functions :
+       (a) Mod : h(x) = x%size ; size is generally taken as prime number !!
+       (b) MidSquare = take middle digit of squared key !!
+              ex : key = 11 -> 11^2 -> 121 -> middle digit is 2, so it's hash index is 2 !!
+       (c) Folding : if key = 123345 then we can make parts of the key like 12,33,45 then add them 
+                     to get the index !!!
